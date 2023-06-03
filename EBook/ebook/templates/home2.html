@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-BOOK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <header id="main-header" class="mx-auto items-center justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2"><b>E-BOOK</b></header>
+</head>
+<body>
+  <div class="navbar bg-white font-bold hidden md:block lg:block xl:block">
+    <div class="navbar bg-gray-100 p-1 font-bold">
+      <ul class="flex flex-row mx-auto">
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2 "><a href="#">Chapter 1</a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="#">Chapter 2</a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="#">Chapter 3</a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="#">Chapter 4</a></li>
+      </ul>
+      </div>
+  </div>
+    <!-- Toggler -->
+        <div id="main" class="lg:hidden md:hidden xl:hidden">
+          <button class="openbtn" onclick="openNav()"><img id="bars" src="/static/bars.svg" class="h-5 hover:cursor-pointer flex-start ml-1 my-auto mr-2 font-bold"></button>
+        </div>
+
+
+{% comment %} sidebar start {% endcomment %}
+{% comment %} a vertical sidebar on the right side {% endcomment %}
+<div class="flex flex-col fixed top-0 right-0 z-10 w-64 h-full bg-white border-r lg:hidden xl:hidden md:hidden overflow-y-auto shadow-lg" id="mySidebar" class="sidebar">
+
+  {% comment %} insert a toggle btn to hide the side bar onclick {% endcomment %}
+  <button class="closebtn" onclick="closeNav()"><img id="close" src="/static/close.svg" class="h-10 hover:cursor-pointer flex-start ml-1 my-auto mr-2 font-bold"></button>
+
+
+  <div class="flex items-center justify-center h-14 border-b">
+    <div class="flex items-center">
+      <span class="text-sm font-bold mx-2 text-gray-600">E-BOOK</span>
+    </div>
+  </div>
+  <div class="overflow-y-auto overflow-x-hidden flex-grow">
+    <ul class="flex flex-col py-6 space-y-1">
+      <li class="px-5">
+        <div class="flex flex-row items-center h-8">
+          <div class="text-sm font-light tracking-wide text-gray-500">Dashboard</div>
+        </div>
+      </li>
+      <li>
+        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100">
+          <span class="inline-flex justify-center items-center ml-4">
+            <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </span>
+          <span class="ml-2 text-sm tracking-wide truncate">Chapter 1</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100">
+          <span class="inline-flex justify-center items-center ml-4">
+            <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </span>
+          <span class="ml-2 text-sm tracking-wide truncate">Chapter 2</span>
+        </a>
+      </li>
+      <li>
+        
+        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100">
+          <span class="inline-flex justify-center items-center ml-4">
+            <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </span>
+          <span class="ml-2 text-sm tracking-wide truncate">Chapter 3</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100">
+          <span class="inline-flex justify-center items-center ml-4">
+            <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </span>
+          <span class="ml-2 text-sm tracking-wide truncate">Chapter 4</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% comment %} sidebar end {% endcomment %}
+
+{% comment %} main content {% endcomment %}
+{% comment %} a body section with a overflow-y auto {% endcomment %}
+<div class="mx-auto w-[80%] overflow-hidden items-center justify-center shadow-lg rounded-md border-t-0 border-2 h-auto border-b-0 mb-0" id="content">
+  <div class="p-4 bg-white border-b border-gray-200">
+    <div class="flex flex-col items-center justify-between">
+      <h2 class="font-semibold text-lg text-gray-800 m-2 underline">Chapter 1</h2>
+      <div class="flex flex-col items-center">
+        {% comment %} content {% endcomment %}
+        <div class="m-2 p-1 text-justify text-xl font-serif items-center justify-center mx-auto overflow-hidden h-auto my-auto">
+            <p>Enim sit irure ea pariatur ullamco nulla et adipisicing sit eiusmod sint dolor culpa nisi incididunt adipisicing ullamco non non sunt fugiat est aliquip exercitation consectetur ex mollit in esse cupidatat sunt cillum anim do commodo eiusmod et sit aliquip cupidatat est labore laboris laborum commodo dolore labore qui est eiusmod eu. Dolore adipisicing cupidatat duis do officia fugiat dolore occaecat aliquip excepteur do pariatur nostrud sint occaecat aute tempor aliquip ea nulla Lorem voluptate exercitation adipisicing enim voluptate id labore cupidatat sint excepteur elit nisi eu cillum aliquip sint fugiat ex esse ut in quis pariatur nostrud sint sunt sit qui ullamco dolor anim consectetur ullamco anim irure mollit do excepteur officia dolore quis ad proident quis Lorem ut aliquip incididunt nulla velit do quis anim duis non. Quis sit cillum reprehenderit laborum labore eu exercitation qui irure sit est sunt sit minim Lorem commodo do ut sint consectetur exercitation cillum aliqua ut do anim do excepteur dolor ullamco id laborum ex officia minim labore dolore. Irure non qui eu commodo anim sint do reprehenderit ad consequat ipsum voluptate excepteur nostrud veniam sint duis dolore deserunt incididunt culpa est fugiat ad consequat dolor nulla laboris mollit duis eiusmod aliquip sit tempor ad laboris exercitation ullamco aute proident dolor commodo esse officia labore dolor. Adipisicing eiusmod aliqua proident eiusmod aliquip nostrud sunt incididunt sit laborum velit amet exercitation Lorem deserunt eiusmod velit ut ex cillum quis enim cupidatat minim minim pariatur irure duis laboris quis dolore sit dolore elit consequat ea exercitation incididunt est eiusmod minim quis occaecat aute est et labore elit adipisicing esse nostrud labore pariatur dolor incididunt esse mollit nisi quis aute tempor nulla ullamco consequat sunt in exercitation laboris incididunt tempor consequat officia qui duis adipisicing elit ipsum aliqua qui fugiat voluptate amet ad aute Lorem velit amet cillum elit Lorem consequat.</p>
+
+<p>Aliqua irure minim minim commodo do nulla nulla aute ut nostrud ad sit esse qui consequat ipsum non in in sint ad eu ea labore magna excepteur irure magna nisi proident pariatur sint nostrud reprehenderit enim. Id in voluptate ullamco sunt cupidatat in laboris aute voluptate fugiat ex occaecat anim nostrud ipsum laborum esse amet anim voluptate fugiat eiusmod quis sint consectetur proident elit pariatur fugiat ipsum magna tempor do occaecat cupidatat occaecat. Qui nostrud commodo proident duis nostrud nisi ea ut veniam veniam non minim fugiat elit cillum est id amet qui voluptate sint non ipsum pariatur consequat mollit laborum cillum fugiat est veniam nulla ut cillum minim magna ut ullamco eiusmod ullamco cupidatat ut consectetur ex tempor laboris incididunt commodo nostrud consectetur non minim non anim adipisicing irure do ipsum fugiat occaecat minim cupidatat laborum in sint ipsum est laborum dolor sint amet aute Lorem nostrud eiusmod culpa ullamco nostrud aliquip dolor sint fugiat velit pariatur laboris deserunt nostrud esse pariatur magna id esse velit. Amet ipsum ea ullamco labore incididunt magna ad adipisicing et proident sint esse mollit ut voluptate irure in sunt labore non veniam sit ad deserunt sint sit quis adipisicing eu pariatur ea fugiat consequat nisi duis est adipisicing sit eu proident fugiat cupidatat ipsum do aute culpa deserunt ea esse eiusmod elit ut Lorem enim sunt deserunt commodo sint nostrud culpa nisi enim ullamco excepteur ullamco commodo cillum ex voluptate enim ipsum et voluptate voluptate et nulla ullamco qui eiusmod ut cillum officia ex velit esse aute voluptate ad consequat cillum non occaecat cupidatat deserunt quis Lorem culpa laborum cupidatat. Dolore excepteur tempor sunt sit exercitation ea officia enim consectetur qui et magna sunt non qui velit ullamco occaecat culpa dolor consectetur duis mollit deserunt nostrud consequat esse commodo ad duis esse in elit quis anim Lorem et dolore sint cupidatat magna in culpa ad voluptate eiusmod in officia dolore proident quis ut tempor exercitation dolore culpa officia ad laborum amet sunt qui do fugiat laboris velit qui deserunt qui laboris laborum adipisicing consectetur fugiat cupidatat ad excepteur ullamco et do.</p>
+
+<p>Commodo Lorem quis eu deserunt pariatur eu consectetur eiusmod est sit nisi exercitation labore dolore sunt ex minim qui deserunt proident quis labore sint cupidatat veniam velit culpa enim nisi eiusmod ad mollit aute et incididunt Lorem excepteur amet enim. Cupidatat labore exercitation veniam cupidatat exercitation dolore commodo fugiat ullamco ea do non nostrud in magna ullamco eu officia do laborum laborum nisi deserunt esse aliquip labore consequat ad pariatur duis dolor officia reprehenderit pariatur ut incididunt est tempor cupidatat qui exercitation incididunt in et ex quis consectetur nulla cupidatat id ut et incididunt ad magna id ullamco Lorem reprehenderit nulla ut consequat Lorem veniam quis deserunt reprehenderit ipsum aliquip excepteur reprehenderit sint exercitation labore cillum sunt voluptate est aute proident. Quis esse exercitation dolor aliquip minim anim non adipisicing minim ad minim eu sunt voluptate pariatur esse dolor aute commodo exercitation officia dolore veniam anim aliquip in fugiat pariatur est quis ad Lorem deserunt enim qui consectetur aute amet magna pariatur elit ullamco quis eiusmod ullamco esse sint aliqua ea ipsum proident excepteur irure consectetur sint aute qui nisi magna dolor amet ipsum officia mollit excepteur nostrud commodo duis minim ad aliquip anim labore fugiat nisi cupidatat non dolore eiusmod incididunt proident voluptate dolore exercitation qui excepteur ea commodo laboris aute quis. Ut ullamco dolor officia ea enim duis sunt qui Lorem labore nisi veniam voluptate non velit ea excepteur do ea anim sunt sit enim non non et nisi quis ipsum incididunt tempor aliqua labore aliquip ipsum culpa culpa aliqua amet sunt quis pariatur enim adipisicing nisi qui magna minim incididunt sit commodo veniam enim elit eu consequat laboris sint laboris ullamco veniam deserunt elit aliqua nulla aliquip ea voluptate consectetur enim commodo veniam qui nostrud aliquip id enim magna qui proident reprehenderit consequat sint sint in magna aute sunt consectetur consequat esse ea. Voluptate eiusmod tempor dolor dolor aliqua occaecat aliquip labore mollit magna cupidatat sunt laborum ad deserunt id mollit aute commodo magna aliquip voluptate nisi in laboris velit sit proident eiusmod laborum anim aliqua velit ipsum aliqua anim fugiat enim cupidatat sit officia duis fugiat commodo magna adipisicing fugiat nisi ipsum officia consectetur ut deserunt quis ipsum mollit mollit laboris.</p>
+
+<p>Et exercitation exercitation enim officia exercitation cillum aute duis quis ut in cupidatat exercitation excepteur occaecat anim ullamco Lorem mollit quis consectetur tempor. Nisi enim velit proident esse ullamco dolor nisi occaecat culpa et irure pariatur ex excepteur esse mollit deserunt et voluptate do labore consequat ipsum proident velit tempor tempor sit consectetur irure enim id esse commodo laboris minim nulla fugiat consequat ut occaecat aute ad et officia occaecat fugiat ad ipsum commodo ipsum eu culpa excepteur velit ipsum duis minim consequat sint reprehenderit nostrud non fugiat laboris consequat incididunt occaecat irure id sit dolore minim quis. Incididunt sit nostrud sit exercitation veniam pariatur aliquip ea culpa cillum enim sint duis excepteur aliqua esse reprehenderit quis ea nulla velit occaecat minim nostrud quis Lorem sit laborum tempor tempor reprehenderit laboris enim duis occaecat consequat nulla in culpa duis dolor reprehenderit anim ea exercitation ea enim aliquip est ut deserunt sunt elit est occaecat ut ad excepteur deserunt officia ad esse consequat do elit sit commodo consequat enim consequat irure occaecat ut id minim laborum reprehenderit anim Lorem veniam dolore culpa enim ipsum minim minim exercitation enim et reprehenderit ipsum tempor incididunt cillum incididunt commodo eu occaecat veniam. Amet commodo eu pariatur eu consequat non fugiat irure laboris sit sit minim id do ipsum esse eiusmod eu aliqua minim ex exercitation duis laborum do aliquip exercitation sint ullamco dolore et ut fugiat occaecat commodo duis sint veniam eu consectetur aliquip culpa eiusmod non consectetur aliqua enim. Quis veniam voluptate excepteur cillum laboris proident est nostrud duis amet qui tempor reprehenderit aliquip pariatur Lorem nisi culpa sunt consectetur fugiat voluptate velit quis ad cillum deserunt irure aute elit cupidatat elit esse esse ea aliquip magna ad enim in fugiat anim proident laborum aliquip voluptate aliquip adipisicing aliqua ad ea nisi cillum velit mollit voluptate aliqua duis laboris aliqua velit exercitation ullamco nisi aliquip aliqua ad aliqua consectetur aliqua amet fugiat reprehenderit minim ea ex exercitation commodo culpa commodo amet id cupidatat aute ad officia et culpa culpa proident minim fugiat aliqua nulla ullamco.</p>
+
+<p>Ullamco exercitation qui enim cillum aute adipisicing tempor pariatur in proident voluptate sint nulla amet esse occaecat consectetur est voluptate ut ad duis commodo nostrud duis Lorem velit id nisi tempor sint sint elit veniam labore magna laboris incididunt magna commodo quis mollit tempor eu proident eiusmod id exercitation anim fugiat sunt enim exercitation in reprehenderit esse ut consequat laboris esse eiusmod occaecat ea amet reprehenderit mollit dolor quis nisi adipisicing voluptate sint ut eu est pariatur nisi amet est Lorem voluptate consectetur consectetur cupidatat ipsum excepteur Lorem anim enim officia cupidatat exercitation fugiat officia aliquip irure ut duis. Laborum qui sint dolore irure dolor deserunt cillum non ex non excepteur aute sit officia occaecat laboris pariatur magna id nulla exercitation tempor cillum ea adipisicing incididunt occaecat et aliqua est dolor irure incididunt dolore laboris magna in duis dolor id ullamco fugiat tempor anim est deserunt. Dolore elit ea sit pariatur elit elit enim exercitation consectetur sunt ullamco irure ut commodo et ullamco dolore sit nisi adipisicing commodo velit eu dolore irure laborum nulla Lorem non incididunt id dolore magna non enim Lorem fugiat elit reprehenderit non et veniam consectetur mollit aliquip consequat minim reprehenderit proident amet ut velit nostrud exercitation quis irure pariatur culpa elit voluptate laboris nisi voluptate. Ullamco laborum consequat do nulla id anim eu reprehenderit esse exercitation mollit ea eiusmod officia velit enim ad ea nulla consectetur officia proident adipisicing id magna exercitation id laboris voluptate pariatur mollit proident quis anim cillum irure do qui proident pariatur sint irure ex ullamco nisi ex ex veniam quis ad anim irure in aliqua magna amet ex aliquip cupidatat do. Pariatur sit incididunt aliquip voluptate proident reprehenderit non ut nulla deserunt non laborum commodo culpa proident non nostrud ad incididunt excepteur consectetur laborum eiusmod minim do sint commodo sit magna cupidatat ad laboris cillum aliqua pariatur ex deserunt tempor adipisicing dolore sint labore enim culpa dolor esse voluptate aliqua quis nulla est Lorem enim eu deserunt pariatur sint nostrud non magna excepteur laborum do laborum cillum sunt qui eiusmod consequat esse pariatur veniam aute non commodo adipisicing Lorem et laborum esse aliquip veniam cillum magna.</p>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+</div>
+
+{% comment %} javascript {% endcomment %}
+<script>
+  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "270px";
+  document.getElementById("main").style.marginLeft = "0";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+
+</body>
+<footer class="footer bg-gray-50 p-1 font-bold my-auto">
+  <div class="flex flex-row mx-auto m-1">
+      <ul class="flex flex-row mx-auto m-1">
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2 "><a href="https://facebook.com"><img src="/static/facebook.svg" class="h-8"></a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="https://instagram.com"><img src="/static/instagram.svg" class="h-8"></a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"p-2 gap-2><a href="https://twitter.com"><img src="/static/twitter.svg" class="h-8"></a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="https://github.com"><img src="/static/github.svg" class="h-8"></a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="https://linkedin.com"><img src="/static/linkedin.svg" class="h-8"></a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="https://wordpress.com"><img src="/static/wordpress.svg" class="h-8"></a></li>
+      </ul>
+  </div>
+  {% comment %} contact section {% endcomment %}
+  <div class="flex flex-row mx-auto m-1">
+      <ul class="flex flex-row mx-auto m-1">
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2 ">Phone: <a href="#">+254 700000000</a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2">Email: <a href="#">ebookread@gmail.com</a></li>
+          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2">Address: <a href="#">4th Street Nairobi</a></li>
+      </ul>
+  </div>
+</footer>
+</html>
