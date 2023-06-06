@@ -157,13 +157,16 @@
 <div class="mx-auto w-[80%] overflow-hidden items-center justify-center shadow-lg rounded-md border-t-0 border-2 h-auto border-b-0 mb-0" id="content">
   <div class="p-4 bg-white border-b border-gray-200">
     <div class="flex flex-col items-center justify-between">
-      <h2 class="font-semibold text-lg text-gray-800 m-2 underline">{{ titles }}</h2>
+      <h2 class="font-semibold font-sans text-gray-800 m-2 underline uppercase text-3xl">Book Contents</h2>
       <div class="flex flex-col items-center">
         {% comment %} content {% endcomment %}
         <div class="m-2 p-4 text-justify text-xl font-serif items-center justify-center mx-auto overflow-auto  h-[900px] my-auto">
-         
-            {{ content }}
-         
+         {% for title in titles%}
+        <h1 class="font-bold uppercase text-center justify-center mx-auto text-2xl m-2">{{ title }}</h1>
+        {% for content in contents%}
+            <p>{{ content }}</p>
+            {% endfor %}
+         {% endfor %}
         </div>
       </div>
     </div>
