@@ -54,7 +54,15 @@
               <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
             </svg>
           </span>
-          <span class="ml-2 text-sm tracking-wide truncate">Chapter 1</span>
+          {% comment %} <span class="ml-2 text-sm tracking-wide truncate">Chapter 1</span> {% endcomment %}
+          <button class="dropdown-btn ml-2"> Chapter 1
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
         </a>
       </li>
       <li>
