@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BOOK</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    {% comment %} <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> {% endcomment %}
     <header id="main-header" class="mx-auto items-center justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2"><b>E-BOOK</b></header>
 </head>
 <body>
@@ -48,54 +48,49 @@
         </div>
       </li>
       <li>
-        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100">
-          <span class="inline-flex justify-center items-center ml-4">
+          <li>
+            <button type="button" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+              <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+              </svg>
+                  <span class="flex-1 ml-3 text-left whitespace-nowrap">Chapter 1</span>
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+            <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                  <li>
+                     <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Products</a>
+                  </li>
+                  <li>
+                     <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Billing</a>
+                  </li>
+                  <li>
+                     <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Invoice</a>
+                  </li>
+            </ul>
+         </li>
+         <li>
+          <button type="button" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
             <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
             </svg>
-          </span>
-          {% comment %} <span class="ml-2 text-sm tracking-wide truncate">Chapter 1</span> {% endcomment %}
-          <button class="dropdown-btn ml-2"> Chapter 1
-            <i class="fa fa-caret-down"></i>
+                <span class="flex-1 ml-3 text-left whitespace-nowrap">Chapter 2</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
           </button>
-          <div class="dropdown-container">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
+          <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                <li>
+                   <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Products</a>
+                </li>
+                <li>
+                   <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Billing</a>
+                </li>
+                <li>
+                   <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Invoice</a>
+                </li>
+          </ul>
+       </li>
         </a>
       </li>
-      <li>
-        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100">
-          <span class="inline-flex justify-center items-center ml-4">
-            <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
-              <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-            </svg>
-          </span>
-          <span class="ml-2 text-sm tracking-wide truncate">Chapter 2</span>
-        </a>
-      </li>
-      <li>
-        
-        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100">
-          <span class="inline-flex justify-center items-center ml-4">
-            <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
-              <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-            </svg>
-          </span>
-          <span class="ml-2 text-sm tracking-wide truncate">Chapter 3</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100">
-          <span class="inline-flex justify-center items-center ml-4">
-            <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
-              <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-            </svg>
-          </span>
-          <span class="ml-2 text-sm tracking-wide truncate">Chapter 4</span>
-        </a>
-      </li>
+      
     </ul>
   </div>
 </div>
@@ -134,6 +129,15 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
+}
+var drop = document.getElementById('dropdown-example')
+{% comment %} onclick expande and show the list in it {% endcomment %}
+function dropdown() {
+  if (drop.class.contains('hidden')) {
+    drop.classList.remove('hidden')
+  } else {
+    drop.classList.add('hidden')
+  }
 }
 
 
