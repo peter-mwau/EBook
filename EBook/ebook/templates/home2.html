@@ -7,7 +7,7 @@
     <title>E-BOOK</title>
     <script src="https://cdn.tailwindcss.com"></script>
     {% comment %} <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> {% endcomment %}
-    <header id="main-header" class="mx-auto items-center justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2"><b>E-BOOK</b></header>
+    <header id="main-header" class="mx-auto items-center  justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2"><b>E-BOOK</b></header>
 </head>
 <body>
   {% csrf_token %}
@@ -58,13 +58,13 @@
             </button>
             <ul id="dropdown-example" class="hidden py-2 space-y-2">
                   <li>
-                     <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Products</a>
+                     <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Subtitle One</a>
                   </li>
                   <li>
-                     <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Billing</a>
+                     <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Subtitle Two</a>
                   </li>
                   <li>
-                     <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Invoice</a>
+                     <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Subtitle Three</a>
                   </li>
             </ul>
          </li>
@@ -139,7 +139,17 @@ function dropdown() {
     drop.classList.add('hidden')
   }
 }
+  // Get the dropdown button element
+  const dropdownButton = document.querySelector('[data-collapse-toggle="dropdown-example"]');
 
+  // Get the dropdown menu element
+  const dropdownMenu = document.getElementById('dropdown-example');
+
+  // Add an event listener to the dropdown button for the click event
+  dropdownButton.addEventListener('click', () => {
+    // Toggle the "hidden" class on the dropdown menu to show/hide it
+    dropdownMenu.classList.toggle('hidden');
+  });
 
 </script>
 
