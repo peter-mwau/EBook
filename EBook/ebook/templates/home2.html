@@ -11,16 +11,71 @@
 </head>
 <body>
   {% csrf_token %}
+  {% comment %} navbar-section {% endcomment %}
   <div class="navbar bg-white font-bold hidden md:block lg:block xl:block">
     <div class="navbar bg-gray-100 p-1 font-bold">
       <ul class="flex flex-row mx-auto">
-          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2 "><a href="#">Chapter 1</a></li>
-          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="#">Chapter 2</a></li>
-          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="#">Chapter 3</a></li>
-          <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="#">Chapter 4</a></li>
+        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+          <a href="#">Chapter 1</a>
+          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2">
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 1.1</a>
+            </li>
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 1.2</a>
+            </li>
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 1.3</a>
+            </li>
+          </ul>
+        </li>
+        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+          <a href="#">Chapter 2</a>
+          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2">
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 2.1</a>
+            </li>
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 2.2</a>
+            </li>
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 2.3</a>
+            </li>
+          </ul>
+        </li>
+        <li class="font-semibold text-xl hover:cursor-pointer p-2">
+          <a href="#">Chapter 3</a>
+          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2">
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 3.1</a>
+            </li>
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 3.2</a>
+            </li>
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 3.3</a>
+            </li>
+          </ul>
+        </li>
+        <li class="font-semibold text-xl hover:cursor-pointer p-2">
+          <a href="#">Chapter 4</a>
+          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2">
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 4.1</a>
+            </li>
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 4.2</a>
+            </li>
+            <li class="p-2 hover:bg-gray-300">
+              <a href="#">Subtopic 4.3</a>
+            </li>
+          </ul>
+        </li>
       </ul>
-      </div>
+    </div>
   </div>
+  {% comment %} navbar-section end {% endcomment %}
+  
     <!-- Toggler -->
         <div id="main" class="lg:hidden md:hidden xl:hidden">
           <button class="openbtn" onclick="openNav()"><img id="bars" src="/static/bars.svg" class="h-5 hover:cursor-pointer flex-start ml-1 my-auto mr-2 font-bold"></button>
@@ -150,6 +205,23 @@ function dropdown() {
     // Toggle the "hidden" class on the dropdown menu to show/hide it
     dropdownMenu.classList.toggle('hidden');
   });
+    // Get all the list items with class "font-semibold"
+    const listItems = document.querySelectorAll('.font-semibold');
+
+    // Add event listeners to each list item for the "mouseover" and "mouseout" events
+    listItems.forEach((item) => {
+      item.addEventListener('mouseover', () => {
+        // Show the dropdown menu when the list item is hovered
+        const dropdownMenu = item.querySelector('.dropdown-menu');
+        dropdownMenu.style.display = 'block';
+      });
+  
+      item.addEventListener('mouseout', () => {
+        // Hide the dropdown menu when the mouse moves out of the list item
+        const dropdownMenu = item.querySelector('.dropdown-menu');
+        dropdownMenu.style.display = 'none';
+      });
+    });
 
 </script>
 
