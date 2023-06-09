@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,12 +13,12 @@
 <body>
   {% csrf_token %}
   {% comment %} navbar-section {% endcomment %}
-  <div class="navbar bg-white font-bold hidden md:block lg:block xl:block">
-    <div class="navbar bg-gray-100 p-1 font-bold flex flex-row">
+  <div class="navbar bg-white font-bold hidden md:block lg:block xl:block dark:bg-gray-600 dark:text-white">
+    <div class="navbar bg-gray-100 p-1 font-bold flex flex-row dark:text-white dark:bg-gray-600">
       <ul class="flex flex-row mx-auto items-start justify-start ml-2">
-        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2 dark:hover:text-white">
           <a href="#">Chapter 1</a>
-          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2">
+          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2 dark:bg-gray-700">
             <li class="p-2 hover:bg-gray-300">
               <a href="#">Subtopic 1.1</a>
             </li>
@@ -32,7 +32,7 @@
         </li>
         <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
           <a href="#">Chapter 2</a>
-          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2">
+          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2 dark:bg-gray-700">
             <li class="p-2 hover:bg-gray-300">
               <a href="#">Subtopic 2.1</a>
             </li>
@@ -46,7 +46,7 @@
         </li>
         <li class="font-semibold text-xl hover:cursor-pointer p-2">
           <a href="#">Chapter 3</a>
-          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2">
+          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2 dark:bg-gray-700">
             <li class="p-2 hover:bg-gray-300">
               <a href="#">Subtopic 3.1</a>
             </li>
@@ -60,7 +60,7 @@
         </li>
         <li class="font-semibold text-xl hover:cursor-pointer p-2">
           <a href="#">Chapter 4</a>
-          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2">
+          <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2 dark:bg-gray-700">
             <li class="p-2 hover:bg-gray-300">
               <a href="#">Subtopic 4.1</a>
             </li>
@@ -82,7 +82,7 @@
   
     <!-- Toggler -->
         <div id="main" class="lg:hidden md:hidden xl:hidden">
-          <button class="openbtn" onclick="openNav()"><img id="bars" src="/static/bars.svg" class="h-5 hover:cursor-pointer flex-start ml-1 my-auto mr-2 font-bold"></button>
+          <button class="openbtn" onclick="openNav()"><img id="bars" src="/static/bars.svg" class="h-5 hover:cursor-pointer dark:text-white flex-start ml-1 my-auto mr-2 font-bold"></button>
         </div>
 
 
@@ -232,18 +232,25 @@ function dropdown() {
 
     {% comment %} get id toggleDarkMode and make it on click to change to anothe img {% endcomment %}
     let toggleDarkMode = document.getElementById('toggleDarkMode');
-    toggleDarkMode.addEventListener('click', () => {
-      const isDarkMode = document.documentElement.classList.contains('dark');
-      //also activate the 'dark' classes on all elements
-      document.documentElement.classList.toggle('dark');
-      if (isDarkMode) {
-        document.documentElement.classList.remove('dark');
-        toggleDarkMode.src = '/static/nightmode.svg';
-      } else {
-        document.documentElement.classList.add('dark');
-        toggleDarkMode.src = '/static/night-mode.svg';
-      }
-    });
+toggleDarkMode.addEventListener('click', () => {
+  const isDarkMode = document.documentElement.classList.contains('dark');
+  // Toggle the 'dark' class on the document element
+  document.documentElement.classList.toggle('dark');
+
+  // Toggle the 'dark' class on all sections
+  const sections = document.querySelectorAll('section');
+  sections.forEach((section) => {
+    section.classList.toggle('dark');
+  });
+
+  // Toggle the image source based on the dark mode state
+  if (isDarkMode) {
+    toggleDarkMode.src = '/static/light-mode.svg';
+  } else {
+    toggleDarkMode.src = '/static/nightmode.svg';
+  }
+});
+
     
 
 </script>
