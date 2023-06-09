@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BOOK</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     {% comment %} <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> {% endcomment %}
-    <header id="main-header" class="mx-auto items-center  justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2"><b>E-BOOK</b></header>
+    <header id="main-header" class="mx-auto items-center  justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2 dark:bg-gray-700 dark:text-white"><b>E-BOOK</b></header>
 </head>
 <body>
   {% csrf_token %}
   {% comment %} navbar-section {% endcomment %}
   <div class="navbar bg-white font-bold hidden md:block lg:block xl:block">
-    <div class="navbar bg-gray-100 p-1 font-bold">
-      <ul class="flex flex-row mx-auto">
+    <div class="navbar bg-gray-100 p-1 font-bold flex flex-row">
+      <ul class="flex flex-row mx-auto items-start justify-start ml-2">
         <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
           <a href="#">Chapter 1</a>
           <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2">
@@ -72,6 +73,9 @@
           </ul>
         </li>
       </ul>
+      <button class="bg-gray-300 text-white rounded-md p-2 flex flex-row mr-2 items-end mx-auto mb-2 justify-end">
+        <img id="toggleDarkMode" src="/static/night-mode.svg" class="h-7">
+    </button>
     </div>
   </div>
   {% comment %} navbar-section end {% endcomment %}
@@ -225,6 +229,22 @@ function dropdown() {
         dropdownMenu.style.display = 'none';
       });
     });
+
+    {% comment %} get id toggleDarkMode and make it on click to change to anothe img {% endcomment %}
+    let toggleDarkMode = document.getElementById('toggleDarkMode');
+    toggleDarkMode.addEventListener('click', () => {
+      const isDarkMode = document.documentElement.classList.contains('dark');
+      //also activate the 'dark' classes on all elements
+      document.documentElement.classList.toggle('dark');
+      if (isDarkMode) {
+        document.documentElement.classList.remove('dark');
+        toggleDarkMode.src = '/static/nightmode.svg';
+      } else {
+        document.documentElement.classList.add('dark');
+        toggleDarkMode.src = '/static/night-mode.svg';
+      }
+    });
+    
 
 </script>
 

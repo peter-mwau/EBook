@@ -1,382 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-BOOK</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <header id="main-header" class="mx-auto items-center justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2"><b>E-BOOK</b></header>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-BOOK</title>
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+    }
+
+    body.dark-mode {
+      background-color: #192734;
+      color: #fff;
+    }
+  </style>
 </head>
+<body>
+<header id="main-header" class="mx-auto items-center justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2">
+  <b>E-BOOK</b>
+</header>
 
-<body class="h-[100vh] mx-auto">
-    <div class="navbar bg-gray-100 p-1 font-bold">
-        <ul class="flex flex-row mx-auto m-1 sm:hidden">
-            <img id="bars" src="/static/bars.svg" class="h-5 hover:cursor-pointer sm:hover:text-red-600 flex-start ml-1 my-auto mr-2 font-bold" onclick="function(){data-[te-sidenav-hidden='true']:-translate-x-0}">
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2 "><a href="#">Home</a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="#">About</a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"p-2 gap-2><a href="#">About</a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="#">Services</a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="#">Contacts</a></li>
-        </ul>
+<!-- Rest of the code... -->
+
+<script>
+  function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+  }
+</script>
+
+<footer class="footer bg-gray-50 p-1 font-bold my-auto">
+  <div class="flex flex-row mx-auto m-1">
+    <ul class="flex flex-row mx-auto m-1">
+      <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+        <a href="#">Home</a>
+      </li>
+      <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+        <a href="#">About</a>
+      </li>
+      <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+    <div class="flex flex-row ml-auto">
+      <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+        <i class="fa fa-adjust"></i>
+      </button>
     </div>
-    <!-- Sidenav -->
-<nav id="sidenav-7" class="fixed right-0 top-0 z-[1035] h-screen w-80 translate-x-full overflow-hidden bg-gray-50 shadow-[0_4px_12px_0_rgba(0,0,0,0.07),_0_2px_4px_rgba(0,0,0,0.05)] data-[te-sidenav-hidden='false']:-translate-x-0 dark:bg-zinc-800"
-data-te-sidenav-init data-te-sidenav-hidden="false" data-te-sidenav-right="true">
-<a href="#" onClick="(function(){
-    alert('Hey i am calling');
-    return false;
-    data-[te-sidenav-hidden='true']:-translate-x-0
-})();return false;"><img id="close" onClick="function(){data-[te-sidenav-hidden="True"]:-translate-x-0}"  src="/static/close.svg" class="h-10 hover:cursor-pointer"></a>
-
-<ul class="relative m-0 list-none px-[0.2rem]" data-te-sidenav-menu-ref>
-  <li class="relative">
-    <a
-      class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-      data-te-sidenav-link-ref>
-      <span
-        class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400 dark:[&>svg]:text-gray-300">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="h-4 w-4">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
-        </svg>
-      </span>
-      <span>Titles</span>
-    </a>
-  </li>
-  <li class="relative">
-    <a
-      class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-      data-te-sidenav-link-ref>
-      <span
-        class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400 dark:[&>svg]:text-gray-300">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="h-4 w-4">
-          <path
-            fill-rule="evenodd"
-            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 00-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 01-.189-.866c0-.298.059-.605.189-.866zm2.023 6.828a.75.75 0 10-1.06-1.06 3.75 3.75 0 01-5.304 0 .75.75 0 00-1.06 1.06 5.25 5.25 0 007.424 0z"
-            clip-rule="evenodd" />
-        </svg>
-      </span>
-      <span>Chapter 1</span>
-      <span
-        class="absolute right-0 ml-auto mr-[0.8rem] transition-transform duration-300 ease-linear motion-reduce:transition-none [&>svg]:text-gray-600 dark:[&>svg]:text-gray-300"
-        data-te-sidenav-rotate-icon-ref>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-            clip-rule="evenodd" />
-        </svg>
-      </span>
-    </a>
-    <ul
-      class="!visible relative m-0 hidden list-none p-0 data-[te-collapse-show]:block "
-      data-te-sidenav-collapse-ref>
-      <li class="relative">
-        <a
-          class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-          data-te-sidenav-link-ref
-          >Link 2</a
-        >
-      </li>
-      <li class="relative">
-        <a
-          class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-          data-te-sidenav-link-ref
-          >Link 3</a
-        >
-      </li>
-    </ul>
-  </li>
-  <li class="relative">
-    <a
-      class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-      data-te-sidenav-link-ref>
-      <span
-        class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400 dark:[&>svg]:text-gray-300">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="h-4 w-4">
-          <path
-            fill-rule="evenodd"
-            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 00-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 01-.189-.866c0-.298.059-.605.189-.866zm2.023 6.828a.75.75 0 10-1.06-1.06 3.75 3.75 0 01-5.304 0 .75.75 0 00-1.06 1.06 5.25 5.25 0 007.424 0z"
-            clip-rule="evenodd" />
-        </svg>
-      </span>
-      <span>Chapter 2</span>
-      <span
-        class="absolute right-0 ml-auto mr-[0.8rem] transition-transform duration-300 ease-linear motion-reduce:transition-none [&>svg]:text-gray-600 dark:[&>svg]:text-gray-300"
-        data-te-sidenav-rotate-icon-ref>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-            clip-rule="evenodd" />
-        </svg>
-      </span>
-    </a>
-    <ul
-      class="!visible relative m-0 hidden list-none p-0 data-[te-collapse-show]:block "
-      data-te-sidenav-collapse-ref>
-      <li class="relative">
-        <a
-          class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-          data-te-sidenav-link-ref
-          >Link 2</a
-        >
-      </li>
-      <li class="relative">
-        <a
-          class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-          data-te-sidenav-link-ref
-          >Link 3</a
-        >
-      </li>
-    </ul>
-  </li>
-  <li class="relative">
-    <a
-      class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-      data-te-sidenav-link-ref>
-      <span
-        class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400 dark:[&>svg]:text-gray-300">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="h-4 w-4">
-          <path
-            fill-rule="evenodd"
-            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 00-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 01-.189-.866c0-.298.059-.605.189-.866zm2.023 6.828a.75.75 0 10-1.06-1.06 3.75 3.75 0 01-5.304 0 .75.75 0 00-1.06 1.06 5.25 5.25 0 007.424 0z"
-            clip-rule="evenodd" />
-        </svg>
-      </span>
-      <span>Chapter 3</span>
-      <span
-        class="absolute right-0 ml-auto mr-[0.8rem] transition-transform duration-300 ease-linear motion-reduce:transition-none [&>svg]:text-gray-600 dark:[&>svg]:text-gray-300"
-        data-te-sidenav-rotate-icon-ref>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-            clip-rule="evenodd" />
-        </svg>
-      </span>
-    </a>
-    <ul
-      class="show !visible relative m-0 hidden list-none p-0 data-[te-collapse-show]:block "
-      data-te-sidenav-collapse-ref>
-      <li class="relative">
-        <a
-          class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-          data-te-sidenav-link-ref
-          >Link 4</a
-        >
-      </li>
-      <li class="relative">
-        <a
-          class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-          data-te-sidenav-link-ref
-          >Link 5</a
-        >
-      </li>
-    </ul>
-  </li>
-</ul>
-</nav>
-<!-- Sidenav -->
-
-
-    <section class="wrapper">
-      
-<!-- drawer init and show -->
-<div class="text-center">
-  <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-  Show navigation
-  </button>
-</div>
-
-<!-- drawer component -->
-<div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
-   <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
-   <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
-       <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-       <span class="sr-only">Close menu</span>
-   </button>
- <div class="py-4 overflow-y-auto">
-     <ul class="space-y-2 font-medium">
-        <li>
-           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-              <svg aria-hidden="true" class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
-              <span class="ml-3">Dashboard</span>
-           </a>
-        </li>
-        <li>
-           <button type="button" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
-                 <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
-                 <span class="flex-1 ml-3 text-left whitespace-nowrap">E-commerce</span>
-                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-           </button>
-           <ul id="dropdown-example" class="hidden py-2 space-y-2">
-                 <li>
-                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Products</a>
-                 </li>
-                 <li>
-                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Billing</a>
-                 </li>
-                 <li>
-                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Invoice</a>
-                 </li>
-           </ul>
-        </li>
-        <li>
-           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Kanban</span>
-              <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
-           </a>
-        </li>
-        <li>
-           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Inbox</span>
-              <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
-           </a>
-        </li>
-        <li>
-           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
-           </a>
-        </li>
-        <li>
-           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Products</span>
-           </a>
-        </li>
-        <li>
-           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path></svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
-           </a>
-        </li>
-        <li>
-           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"></path></svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
-           </a>
-        </li>
-     </ul>
   </div>
-</div>
-
-    </section>
-
-    <script>
-        var toggleBars = document.getElementById('bars');
-        var close = document.getElementById('close')
-        //onclick change to another close
-        toggleBars.onclick = function toggleBar() {
-            document.getElementById('bars').classList.toggle('open')
-            document.getElementById('bars').classList.toggle('close')
-            document.getElementById('bars').classList.toggle('open')
-            document.getElementById('bars').classList.toggle('close')
-            }
-            //onclick change to another close
-            close.onclick = function () {
-                document.getElementById('bars').classList.toggle('open')
-                document.getElementById('bars').classList.toggle('close')
-                document.getElementById('bars').classList.toggle('open')
-                document.getElementById('bars').classList.toggle('close')
-                }
-
-        function toggle(){
-            var bar = document.getElementById('bars')
-            var close = document.getElementById('close')
-            //if width < 448px then display bars else hide
-            if(bar.style.width == "0px"){
-                bar.style.width = "455px"
-                close.style.display = "block"
-                }
-                else{
-                    bar.style.width = "0px"
-                    close.style.display = "none"
-                    }
-
-        }
-        // Initialization for ES Users
-import {
-    Sidenav,
-    initTE,
-  } from "tw-elements";
-  
-  initTE({ Sidenav });
-
-    </script>
-
-</body>
-{% comment %} a footer which is static to the bottom of the page {% endcomment %}
-<footer class="footer bg-gray-100 p-1 font-bold mt-[620px]">
-    <div class="flex flex-row mx-auto m-1">
-        <ul class="flex flex-row mx-auto m-1">
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2 "><a href="https://facebook.com"><img src="/static/facebook.svg" class="h-8"></a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="https://instagram.com"><img src="/static/instagram.svg" class="h-8"></a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"p-2 gap-2><a href="https://twitter.com"><img src="/static/twitter.svg" class="h-8"></a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="https://github.com"><img src="/static/github.svg" class="h-8"></a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="https://linkedin.com"><img src="/static/linkedin.svg" class="h-8"></a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2"><a href="https://wordpress.com"><img src="/static/wordpress.svg" class="h-8"></a></li>
-        </ul>
-    </div>
-    {% comment %} contact section {% endcomment %}
-    <div class="flex flex-row mx-auto m-1">
-        <ul class="flex flex-row mx-auto m-1">
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2 ">Phone: <a href="#">+254 700000000</a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2">Email: <a href="#">ebookread@gmail.com</a></li>
-            <li class="font-semibold text-xl hover:text-blue-500 hover:cursor-pointer p-2">Address: <a href="#">4th Street Nairobi</a></li>
-        </ul>
-    </div>
 </footer>
-
+</body>
 </html>
-
-
-{% comment %} <p>Enim sit irure ea pariatur ullamco nulla et adipisicing sit eiusmod sint dolor culpa nisi incididunt adipisicing ullamco non non sunt fugiat est aliquip exercitation consectetur ex mollit in esse cupidatat sunt cillum anim do commodo eiusmod et sit aliquip cupidatat est labore laboris laborum commodo dolore labore qui est eiusmod eu. Dolore adipisicing cupidatat duis do officia fugiat dolore occaecat aliquip excepteur do pariatur nostrud sint occaecat aute tempor aliquip ea nulla Lorem voluptate exercitation adipisicing enim voluptate id labore cupidatat sint excepteur elit nisi eu cillum aliquip sint fugiat ex esse ut in quis pariatur nostrud sint sunt sit qui ullamco dolor anim consectetur ullamco anim irure mollit do excepteur officia dolore quis ad proident quis Lorem ut aliquip incididunt nulla velit do quis anim duis non. Quis sit cillum reprehenderit laborum labore eu exercitation qui irure sit est sunt sit minim Lorem commodo do ut sint consectetur exercitation cillum aliqua ut do anim do excepteur dolor ullamco id laborum ex officia minim labore dolore. Irure non qui eu commodo anim sint do reprehenderit ad consequat ipsum voluptate excepteur nostrud veniam sint duis dolore deserunt incididunt culpa est fugiat ad consequat dolor nulla laboris mollit duis eiusmod aliquip sit tempor ad laboris exercitation ullamco aute proident dolor commodo esse officia labore dolor. Adipisicing eiusmod aliqua proident eiusmod aliquip nostrud sunt incididunt sit laborum velit amet exercitation Lorem deserunt eiusmod velit ut ex cillum quis enim cupidatat minim minim pariatur irure duis laboris quis dolore sit dolore elit consequat ea exercitation incididunt est eiusmod minim quis occaecat aute est et labore elit adipisicing esse nostrud labore pariatur dolor incididunt esse mollit nisi quis aute tempor nulla ullamco consequat sunt in exercitation laboris incididunt tempor consequat officia qui duis adipisicing elit ipsum aliqua qui fugiat voluptate amet ad aute Lorem velit amet cillum elit Lorem consequat.</p>
-
-<p>Aliqua irure minim minim commodo do nulla nulla aute ut nostrud ad sit esse qui consequat ipsum non in in sint ad eu ea labore magna excepteur irure magna nisi proident pariatur sint nostrud reprehenderit enim. Id in voluptate ullamco sunt cupidatat in laboris aute voluptate fugiat ex occaecat anim nostrud ipsum laborum esse amet anim voluptate fugiat eiusmod quis sint consectetur proident elit pariatur fugiat ipsum magna tempor do occaecat cupidatat occaecat. Qui nostrud commodo proident duis nostrud nisi ea ut veniam veniam non minim fugiat elit cillum est id amet qui voluptate sint non ipsum pariatur consequat mollit laborum cillum fugiat est veniam nulla ut cillum minim magna ut ullamco eiusmod ullamco cupidatat ut consectetur ex tempor laboris incididunt commodo nostrud consectetur non minim non anim adipisicing irure do ipsum fugiat occaecat minim cupidatat laborum in sint ipsum est laborum dolor sint amet aute Lorem nostrud eiusmod culpa ullamco nostrud aliquip dolor sint fugiat velit pariatur laboris deserunt nostrud esse pariatur magna id esse velit. Amet ipsum ea ullamco labore incididunt magna ad adipisicing et proident sint esse mollit ut voluptate irure in sunt labore non veniam sit ad deserunt sint sit quis adipisicing eu pariatur ea fugiat consequat nisi duis est adipisicing sit eu proident fugiat cupidatat ipsum do aute culpa deserunt ea esse eiusmod elit ut Lorem enim sunt deserunt commodo sint nostrud culpa nisi enim ullamco excepteur ullamco commodo cillum ex voluptate enim ipsum et voluptate voluptate et nulla ullamco qui eiusmod ut cillum officia ex velit esse aute voluptate ad consequat cillum non occaecat cupidatat deserunt quis Lorem culpa laborum cupidatat. Dolore excepteur tempor sunt sit exercitation ea officia enim consectetur qui et magna sunt non qui velit ullamco occaecat culpa dolor consectetur duis mollit deserunt nostrud consequat esse commodo ad duis esse in elit quis anim Lorem et dolore sint cupidatat magna in culpa ad voluptate eiusmod in officia dolore proident quis ut tempor exercitation dolore culpa officia ad laborum amet sunt qui do fugiat laboris velit qui deserunt qui laboris laborum adipisicing consectetur fugiat cupidatat ad excepteur ullamco et do.</p>
-<p>Aliqua irure minim minim commodo do nulla nulla aute ut nostrud ad sit esse qui consequat ipsum non in in sint ad eu ea labore magna excepteur irure magna nisi proident pariatur sint nostrud reprehenderit enim. Id in voluptate ullamco sunt cupidatat in laboris aute voluptate fugiat ex occaecat anim nostrud ipsum laborum esse amet anim voluptate fugiat eiusmod quis sint consectetur proident elit pariatur fugiat ipsum magna tempor do occaecat cupidatat occaecat. Qui nostrud commodo proident duis nostrud nisi ea ut veniam veniam non minim fugiat elit cillum est id amet qui voluptate sint non ipsum pariatur consequat mollit laborum cillum fugiat est veniam nulla ut cillum minim magna ut ullamco eiusmod ullamco cupidatat ut consectetur ex tempor laboris incididunt commodo nostrud consectetur non minim non anim adipisicing irure do ipsum fugiat occaecat minim cupidatat laborum in sint ipsum est laborum dolor sint amet aute Lorem nostrud eiusmod culpa ullamco nostrud aliquip dolor sint fugiat velit pariatur laboris deserunt nostrud esse pariatur magna id esse velit. Amet ipsum ea ullamco labore incididunt magna ad adipisicing et proident sint esse mollit ut voluptate irure in sunt labore non veniam sit ad deserunt sint sit quis adipisicing eu pariatur ea fugiat consequat nisi duis est adipisicing sit eu proident fugiat cupidatat ipsum do aute culpa deserunt ea esse eiusmod elit ut Lorem enim sunt deserunt commodo sint nostrud culpa nisi enim ullamco excepteur ullamco commodo cillum ex voluptate enim ipsum et voluptate voluptate et nulla ullamco qui eiusmod ut cillum officia ex velit esse aute voluptate ad consequat cillum non occaecat cupidatat deserunt quis Lorem culpa laborum cupidatat. Dolore excepteur tempor sunt sit exercitation ea officia enim consectetur qui et magna sunt non qui velit ullamco occaecat culpa dolor consectetur duis mollit deserunt nostrud consequat esse commodo ad duis esse in elit quis anim Lorem et dolore sint cupidatat magna in culpa ad voluptate eiusmod in officia dolore proident quis ut tempor exercitation dolore culpa officia ad laborum amet sunt qui do fugiat laboris velit qui deserunt qui laboris laborum adipisicing consectetur fugiat cupidatat ad excepteur ullamco et do.</p>
-<p>Aliqua irure minim minim commodo do nulla nulla aute ut nostrud ad sit esse qui consequat ipsum non in in sint ad eu ea labore magna excepteur irure magna nisi proident pariatur sint nostrud reprehenderit enim. Id in voluptate ullamco sunt cupidatat in laboris aute voluptate fugiat ex occaecat anim nostrud ipsum laborum esse amet anim voluptate fugiat eiusmod quis sint consectetur proident elit pariatur fugiat ipsum magna tempor do occaecat cupidatat occaecat. Qui nostrud commodo proident duis nostrud nisi ea ut veniam veniam non minim fugiat elit cillum est id amet qui voluptate sint non ipsum pariatur consequat mollit laborum cillum fugiat est veniam nulla ut cillum minim magna ut ullamco eiusmod ullamco cupidatat ut consectetur ex tempor laboris incididunt commodo nostrud consectetur non minim non anim adipisicing irure do ipsum fugiat occaecat minim cupidatat laborum in sint ipsum est laborum dolor sint amet aute Lorem nostrud eiusmod culpa ullamco nostrud aliquip dolor sint fugiat velit pariatur laboris deserunt nostrud esse pariatur magna id esse velit. Amet ipsum ea ullamco labore incididunt magna ad adipisicing et proident sint esse mollit ut voluptate irure in sunt labore non veniam sit ad deserunt sint sit quis adipisicing eu pariatur ea fugiat consequat nisi duis est adipisicing sit eu proident fugiat cupidatat ipsum do aute culpa deserunt ea esse eiusmod elit ut Lorem enim sunt deserunt commodo sint nostrud culpa nisi enim ullamco excepteur ullamco commodo cillum ex voluptate enim ipsum et voluptate voluptate et nulla ullamco qui eiusmod ut cillum officia ex velit esse aute voluptate ad consequat cillum non occaecat cupidatat deserunt quis Lorem culpa laborum cupidatat. Dolore excepteur tempor sunt sit exercitation ea officia enim consectetur qui et magna sunt non qui velit ullamco occaecat culpa dolor consectetur duis mollit deserunt nostrud consequat esse commodo ad duis esse in elit quis anim Lorem et dolore sint cupidatat magna in culpa ad voluptate eiusmod in officia dolore proident quis ut tempor exercitation dolore culpa officia ad laborum amet sunt qui do fugiat laboris velit qui deserunt qui laboris laborum adipisicing consectetur fugiat cupidatat ad excepteur ullamco et do.</p>
-
-<p>Commodo Lorem quis eu deserunt pariatur eu consectetur eiusmod est sit nisi exercitation labore dolore sunt ex minim qui deserunt proident quis labore sint cupidatat veniam velit culpa enim nisi eiusmod ad mollit aute et incididunt Lorem excepteur amet enim. Cupidatat labore exercitation veniam cupidatat exercitation dolore commodo fugiat ullamco ea do non nostrud in magna ullamco eu officia do laborum laborum nisi deserunt esse aliquip labore consequat ad pariatur duis dolor officia reprehenderit pariatur ut incididunt est tempor cupidatat qui exercitation incididunt in et ex quis consectetur nulla cupidatat id ut et incididunt ad magna id ullamco Lorem reprehenderit nulla ut consequat Lorem veniam quis deserunt reprehenderit ipsum aliquip excepteur reprehenderit sint exercitation labore cillum sunt voluptate est aute proident. Quis esse exercitation dolor aliquip minim anim non adipisicing minim ad minim eu sunt voluptate pariatur esse dolor aute commodo exercitation officia dolore veniam anim aliquip in fugiat pariatur est quis ad Lorem deserunt enim qui consectetur aute amet magna pariatur elit ullamco quis eiusmod ullamco esse sint aliqua ea ipsum proident excepteur irure consectetur sint aute qui nisi magna dolor amet ipsum officia mollit excepteur nostrud commodo duis minim ad aliquip anim labore fugiat nisi cupidatat non dolore eiusmod incididunt proident voluptate dolore exercitation qui excepteur ea commodo laboris aute quis. Ut ullamco dolor officia ea enim duis sunt qui Lorem labore nisi veniam voluptate non velit ea excepteur do ea anim sunt sit enim non non et nisi quis ipsum incididunt tempor aliqua labore aliquip ipsum culpa culpa aliqua amet sunt quis pariatur enim adipisicing nisi qui magna minim incididunt sit commodo veniam enim elit eu consequat laboris sint laboris ullamco veniam deserunt elit aliqua nulla aliquip ea voluptate consectetur enim commodo veniam qui nostrud aliquip id enim magna qui proident reprehenderit consequat sint sint in magna aute sunt consectetur consequat esse ea. Voluptate eiusmod tempor dolor dolor aliqua occaecat aliquip labore mollit magna cupidatat sunt laborum ad deserunt id mollit aute commodo magna aliquip voluptate nisi in laboris velit sit proident eiusmod laborum anim aliqua velit ipsum aliqua anim fugiat enim cupidatat sit officia duis fugiat commodo magna adipisicing fugiat nisi ipsum officia consectetur ut deserunt quis ipsum mollit mollit laboris.</p>
-
-<p>Et exercitation exercitation enim officia exercitation cillum aute duis quis ut in cupidatat exercitation excepteur occaecat anim ullamco Lorem mollit quis consectetur tempor. Nisi enim velit proident esse ullamco dolor nisi occaecat culpa et irure pariatur ex excepteur esse mollit deserunt et voluptate do labore consequat ipsum proident velit tempor tempor sit consectetur irure enim id esse commodo laboris minim nulla fugiat consequat ut occaecat aute ad et officia occaecat fugiat ad ipsum commodo ipsum eu culpa excepteur velit ipsum duis minim consequat sint reprehenderit nostrud non fugiat laboris consequat incididunt occaecat irure id sit dolore minim quis. Incididunt sit nostrud sit exercitation veniam pariatur aliquip ea culpa cillum enim sint duis excepteur aliqua esse reprehenderit quis ea nulla velit occaecat minim nostrud quis Lorem sit laborum tempor tempor reprehenderit laboris enim duis occaecat consequat nulla in culpa duis dolor reprehenderit anim ea exercitation ea enim aliquip est ut deserunt sunt elit est occaecat ut ad excepteur deserunt officia ad esse consequat do elit sit commodo consequat enim consequat irure occaecat ut id minim laborum reprehenderit anim Lorem veniam dolore culpa enim ipsum minim minim exercitation enim et reprehenderit ipsum tempor incididunt cillum incididunt commodo eu occaecat veniam. Amet commodo eu pariatur eu consequat non fugiat irure laboris sit sit minim id do ipsum esse eiusmod eu aliqua minim ex exercitation duis laborum do aliquip exercitation sint ullamco dolore et ut fugiat occaecat commodo duis sint veniam eu consectetur aliquip culpa eiusmod non consectetur aliqua enim. Quis veniam voluptate excepteur cillum laboris proident est nostrud duis amet qui tempor reprehenderit aliquip pariatur Lorem nisi culpa sunt consectetur fugiat voluptate velit quis ad cillum deserunt irure aute elit cupidatat elit esse esse ea aliquip magna ad enim in fugiat anim proident laborum aliquip voluptate aliquip adipisicing aliqua ad ea nisi cillum velit mollit voluptate aliqua duis laboris aliqua velit exercitation ullamco nisi aliquip aliqua ad aliqua consectetur aliqua amet fugiat reprehenderit minim ea ex exercitation commodo culpa commodo amet id cupidatat aute ad officia et culpa culpa proident minim fugiat aliqua nulla ullamco.</p>
-
-<p>Ullamco exercitation qui enim cillum aute adipisicing tempor pariatur in proident voluptate sint nulla amet esse occaecat consectetur est voluptate ut ad duis commodo nostrud duis Lorem velit id nisi tempor sint sint elit veniam labore magna laboris incididunt magna commodo quis mollit tempor eu proident eiusmod id exercitation anim fugiat sunt enim exercitation in reprehenderit esse ut consequat laboris esse eiusmod occaecat ea amet reprehenderit mollit dolor quis nisi adipisicing voluptate sint ut eu est pariatur nisi amet est Lorem voluptate consectetur consectetur cupidatat ipsum excepteur Lorem anim enim officia cupidatat exercitation fugiat officia aliquip irure ut duis. Laborum qui sint dolore irure dolor deserunt cillum non ex non excepteur aute sit officia occaecat laboris pariatur magna id nulla exercitation tempor cillum ea adipisicing incididunt occaecat et aliqua est dolor irure incididunt dolore laboris magna in duis dolor id ullamco fugiat tempor anim est deserunt. Dolore elit ea sit pariatur elit elit enim exercitation consectetur sunt ullamco irure ut commodo et ullamco dolore sit nisi adipisicing commodo velit eu dolore irure laborum nulla Lorem non incididunt id dolore magna non enim Lorem fugiat elit reprehenderit non et veniam consectetur mollit aliquip consequat minim reprehenderit proident amet ut velit nostrud exercitation quis irure pariatur culpa elit voluptate laboris nisi voluptate. Ullamco laborum consequat do nulla id anim eu reprehenderit esse exercitation mollit ea eiusmod officia velit enim ad ea nulla consectetur officia proident adipisicing id magna exercitation id laboris voluptate pariatur mollit proident quis anim cillum irure do qui proident pariatur sint irure ex ullamco nisi ex ex veniam quis ad anim irure in aliqua magna amet ex aliquip cupidatat do. Pariatur sit incididunt aliquip voluptate proident reprehenderit non ut nulla deserunt non laborum commodo culpa proident non nostrud ad incididunt excepteur consectetur laborum eiusmod minim do sint commodo sit magna cupidatat ad laboris cillum aliqua pariatur ex deserunt tempor adipisicing dolore sint labore enim culpa dolor esse voluptate aliqua quis nulla est Lorem enim eu deserunt pariatur sint nostrud non magna excepteur laborum do laborum cillum sunt qui eiusmod consequat esse pariatur veniam aute non commodo adipisicing Lorem et laborum esse aliquip veniam cillum magna.</p> {% endcomment %}

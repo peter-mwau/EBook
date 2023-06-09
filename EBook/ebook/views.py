@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import requests
 from .models import BookContent
+# import redirect
+from django.shortcuts import redirect
 
 
 def home(request):
@@ -23,4 +25,10 @@ def home(request):
         'contents': content,
     }
     return render(request, 'home2.html', context)
+
+def toggle_dark_mode(request):
+    global DARK_MODE
+    DARK_MODE = not DARK_MODE
+    return redirect('book_contents')
+
 
