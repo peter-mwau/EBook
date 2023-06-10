@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="{% if is_dark_theme %}dark {% endif %}">
+<html lang="en" id="html" class="{% if is_dark_theme %}dark {% endif %}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -233,29 +233,7 @@ function dropdown() {
         dropdownMenu.style.display = 'none';
       });
     });
-
-    {% comment %} get id toggleDarkMode and make it on click to change to anothe img {% endcomment %}
-    let toggleDarkMode = document.getElementById('toggleDarkMode');
-toggleDarkMode.addEventListener('click', () => {
-  const isDarkMode = document.documentElement.classList.contains('dark');
-  // Toggle the 'dark' class on the document element
-  document.documentElement.classList.toggle('dark');
-
-  // Toggle the 'dark' class on all sections
-  const sections = document.querySelectorAll('section');
-  sections.forEach((section) => {
-    section.classList.toggle('dark');
-  });
-
-  // Toggle the image source based on the dark mode state
-  if (isDarkMode) {
-    toggleDarkMode.src = '/static/light-mode.svg';
-  } else {
-    toggleDarkMode.src = '/static/nightmode.svg';
-  }
-});
-
-    
+   
 
 </script>
 
