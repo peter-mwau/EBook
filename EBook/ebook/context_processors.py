@@ -1,8 +1,5 @@
-from django.shortcuts import HttpResponseRedirect
-
-def change_theme(request, **kwargs):
+def theme(request):
     if 'is_dark_theme' in request.session:
-        request.session["is_dark_theme"] = not request.session.get('is_dark_theme')
-    else:
-        request.session["is_dark_theme"] = True
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        is_dark_theme = request.session.get("is_dark_theme")
+        return {'is_dark_theme': is_dark_theme}
+    return {'is_dark_theme': False}

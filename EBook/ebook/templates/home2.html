@@ -73,9 +73,13 @@
           </ul>
         </li>
       </ul>
-      <button class="bg-gray-300 text-white rounded-md p-2 flex flex-row mr-2 items-end mx-auto mb-2 justify-end">
-        <img id="toggleDarkMode" src="/static/night-mode.svg" class="h-7">
-    </button>
+      <a href="{% url 'change-theme'%}" class="bg-gray-300 text-white rounded-md p-2 flex flex-row mr-2 items-end mx-auto mb-2 justify-end">
+        {% if is_dark_theme %}
+        <img id="toggleDarkMode"  src="/static/nightmode.svg" class="h-7">
+        {% else %}
+        <img id="toggleDarkMode" src="/static/light-mode.svg" class="h-7">
+        {% endif %}
+      </a>
     </div>
   </div>
   {% comment %} navbar-section end {% endcomment %}
