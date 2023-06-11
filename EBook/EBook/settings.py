@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'ebook',
     'tailwind',
     'django_browser_reload',
+    'theme',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'EBook.wsgi.application'
 

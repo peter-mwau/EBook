@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" id="html" class="{% if is_dark_theme %}dark {% endif %}">
+{% comment %} <html lang="en" id="html" class="{% if is_dark_theme %}dark {% endif %}"> {% endcomment %}
+<html lang="en" id="html" class="dark">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -233,6 +234,22 @@ function dropdown() {
         dropdownMenu.style.display = 'none';
       });
     });
+
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+
+// Whenever the user explicitly chooses light mode
+localStorage.theme = 'light'
+
+// Whenever the user explicitly chooses dark mode
+localStorage.theme = 'dark'
+
+// Whenever the user explicitly chooses to respect the OS preference
+localStorage.removeItem('theme')
    
 
 </script>
