@@ -3,6 +3,7 @@ import requests
 from .models import BookContent
 # import redirect
 from django.shortcuts import redirect, HttpResponseRedirect
+from django.core.paginator import Paginator
 
 
 def home(request):
@@ -11,6 +12,7 @@ def home(request):
     id = BookContent.objects.values_list('id', flat=True)
     title = BookContent.objects.values_list('title', flat=True)
     content = BookContent.objects.values_list('content', flat=True)
+    
 
     # print(title[0])
     # print(content[0])
@@ -34,6 +36,10 @@ def change_theme(request, **kwargs):
     else:
         request.session['is_dark_theme'] = True
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+
+
+
 
 
 
