@@ -1,5 +1,7 @@
 {% load static tailwind_tags %}
 
+{% block content%}
+
 
 <!doctype html>
 <html lang="en" id="html" class="{% if is_dark_theme %}dark{% endif %}">
@@ -167,23 +169,28 @@
 
 {% comment %} main content {% endcomment %}
 {% comment %} a body section with a overflow-y auto {% endcomment %}
-<div class="mx-auto w-[80%] overflow-hidden items-center justify-center shadow-lg rounded-md border-t-0 border-2 m-1 h-auto border-b-0 mb-0 dark:bg-gray-800 dark:text-red-400" id="content">
+<div class="mx-auto w-[80%] overflow-hidden items-center justify-center shadow-lg rounded-md border-t-0 border-2 m-1 h-auto border-b-0 mb-0 dark:bg-gray-800 dark:text-gray-700" id="content">
   <div class="p-10 bg-white border-b border-gray-200">
     <div class="flex flex-col items-center justify-between">
-      <h2 class="font-semibold font-sans text-gray-800 m-2 underline uppercase text-3xl dark:text-green-400">Book Contents</h2>
+      <h2 class="font-semibold font-sans text-gray-800 m-2 underline uppercase text-3xl dark:text-gray-800">Book Contents</h2>
         <div class="flex flex-col items-center">
-        <div class="m-2 p-4 text-justify text-xl font-serif items-center justify-center mx-auto overflow-auto h-[900px] my-auto">
-          {% for title in titles%}
-          <h1 class="font-bold uppercase text-center justify-center mx-auto text-2xl m-2">{{ title }}</h1>
-          {% for content in contents%}
-          <p>{{ content }}</p>
-          {% endfor %}
-          {% endfor %}
-        </div>
+          <div class="m-2 p-4 text-justify text-xl font-serif items-center justify-center mx-auto overflow-auto h-[900px] my-auto">
+            {% for title in titles %}
+              <h1 class="font-bold uppercase text-center justify-center mx-auto text-2xl m-2">{{ title }}</h1>
+              {% for content in contents %}
+                {% if forloop.parentloop.counter0 == forloop.counter0 %}
+                  <p class="mb-4">{{ content }}</p>
+                {% else %}
+                  <p>{{ content }}</p>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
         </div>
     </div>
   </div>
 </div>
+
   
 
 {% comment %} javascript {% endcomment %}
@@ -236,10 +243,10 @@ function dropdown() {
         dropdownMenu.style.display = 'none';
       });
     });
-
+{% comment %} 
     document.getElementById("darkModeToggle").addEventListener("click", function() {
       document.body.classList.toggle("dark");
-  });
+  }); {% endcomment %}
    
 
 </script>
@@ -265,4 +272,5 @@ function dropdown() {
       </ul>
   </div>
 </footer>
+{% endblock content %}
 </html>
