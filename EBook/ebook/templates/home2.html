@@ -1,6 +1,9 @@
+{% load static tailwind_tags %}
+
+
 <!doctype html>
-{% comment %} <html lang="en" id="html" class="{% if is_dark_theme %}dark {% endif %}"> {% endcomment %}
-<html lang="en" id="html" class="dark">
+<html lang="en" id="html" class="{% if is_dark_theme %}dark{% endif %}">
+{% comment %} <html lang="en" id="html" class="dark"> {% endcomment %}
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +13,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     {% comment %} <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> {% endcomment %}
     <header id="main-header" class="mx-auto items-center  justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2 dark:bg-gray-700 dark:text-white"><b>E-BOOK</b></header>
+    {% tailwind_css %}
 </head>
 <body>
   {% csrf_token %}
@@ -17,10 +21,10 @@
   <div class="navbar bg-white font-bold hidden md:block lg:block xl:block dark:bg-gray-600 dark:text-white">
     <div class="navbar bg-gray-100 p-1 font-bold flex flex-row dark:text-white dark:bg-gray-600">
       <ul class="flex flex-row mx-auto items-start justify-start ml-2">
-        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2 dark:hover:text-white">
+        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2 ">
           <a href="#">Chapter 1</a>
           <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2 dark:bg-gray-700">
-            <li class="p-2 hover:bg-gray-300">
+            <li class="p-2 hover:bg-gray-300 ">
               <a href="#">Subtopic 1.1</a>
             </li>
             <li class="p-2 hover:bg-gray-300">
@@ -31,10 +35,10 @@
             </li>
           </ul>
         </li>
-        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2 dark:hover:text-black">
           <a href="#">Chapter 2</a>
           <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2 dark:bg-gray-700">
-            <li class="p-2 hover:bg-gray-300">
+            <li class="p-2 hover:bg-gray-300 ark:hover:text-black">
               <a href="#">Subtopic 2.1</a>
             </li>
             <li class="p-2 hover:bg-gray-300">
@@ -45,21 +49,21 @@
             </li>
           </ul>
         </li>
-        <li class="font-semibold text-xl hover:cursor-pointer p-2">
+        <li class="font-semibold text-xl hover:cursor-pointer p-2 dark:hover:text-black">
           <a href="#">Chapter 3</a>
           <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2 dark:bg-gray-700">
-            <li class="p-2 hover:bg-gray-300">
+            <li class="p-2 hover:bg-gray-300 ark:hover:text-black">
               <a href="#">Subtopic 3.1</a>
             </li>
-            <li class="p-2 hover:bg-gray-300">
+            <li class="p-2 hover:bg-gray-300 ark:hover:text-black">
               <a href="#">Subtopic 3.2</a>
             </li>
-            <li class="p-2 hover:bg-gray-300">
+            <li class="p-2 hover:bg-gray-300 ark:hover:text-black">
               <a href="#">Subtopic 3.3</a>
             </li>
           </ul>
         </li>
-        <li class="font-semibold text-xl hover:cursor-pointer p-2">
+        <li class="font-semibold text-xl hover:cursor-pointer p-2 dark:hover:text-black">
           <a href="#">Chapter 4</a>
           <ul class="dropdown-menu hidden absolute z-10 mt-2 w-40 bg-white border border-gray-300 rounded-lg py-2 dark:bg-gray-700">
             <li class="p-2 hover:bg-gray-300">
@@ -74,11 +78,11 @@
           </ul>
         </li>
       </ul>
-      <a href="{% url 'change-theme'%}" class="bg-gray-300 text-white rounded-md p-2 flex flex-row mr-2 items-end mx-auto mb-2 justify-end">
+      <a href="{% url 'change-theme'%}" id="darkModeToggle" class="bg-gray-300 text-white rounded-md p-2 flex flex-row mr-2 items-end mx-auto mb-2 justify-end">
         {% if is_dark_theme %}
-        <img id="toggleDarkMode"  src="/static/nightmode.svg" class="h-7">
+        <img id="toggleDarkMode"  src="/static/light-mode.svg" class="h-7">
         {% else %}
-        <img id="toggleDarkMode" src="/static/light-mode.svg" class="h-7">
+        <img id="toggleDarkMode" src="/static/nightmode.svg" class="h-7">
         {% endif %}
       </a>
     </div>
@@ -113,7 +117,7 @@
       </li>
       <li>
           <li>
-            <button type="button" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+            <button type="button" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-black dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
               <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
               </svg>
@@ -163,26 +167,24 @@
 
 {% comment %} main content {% endcomment %}
 {% comment %} a body section with a overflow-y auto {% endcomment %}
-<div class="mx-auto w-[80%] overflow-hidden items-center justify-center shadow-lg rounded-md border-t-0 border-2 h-auto border-b-0 mb-0" id="content">
-  <div class="p-4 bg-white border-b border-gray-200">
+<div class="mx-auto w-[80%] overflow-hidden items-center justify-center shadow-lg rounded-md border-t-0 border-2 m-1 h-auto border-b-0 mb-0 dark:bg-gray-800 dark:text-red-400" id="content">
+  <div class="p-10 bg-white border-b border-gray-200">
     <div class="flex flex-col items-center justify-between">
-      <h2 class="font-semibold font-sans text-gray-800 m-2 underline uppercase text-3xl">Book Contents</h2>
-      <div class="flex flex-col items-center">
-        {% comment %} content {% endcomment %}
-        <div class="m-2 p-4 text-justify text-xl font-serif items-center justify-center mx-auto overflow-auto  h-[900px] my-auto">
-         {% for title in titles%}
-        <h1 class="font-bold uppercase text-center justify-center mx-auto text-2xl m-2">{{ title }}</h1>
-        {% for content in contents%}
-            <p>{{ content }}</p>
-            {% endfor %}
-         {% endfor %}
+      <h2 class="font-semibold font-sans text-gray-800 m-2 underline uppercase text-3xl dark:text-green-400">Book Contents</h2>
+        <div class="flex flex-col items-center">
+        <div class="m-2 p-4 text-justify text-xl font-serif items-center justify-center mx-auto overflow-auto h-[900px] my-auto">
+          {% for title in titles%}
+          <h1 class="font-bold uppercase text-center justify-center mx-auto text-2xl m-2">{{ title }}</h1>
+          {% for content in contents%}
+          <p>{{ content }}</p>
+          {% endfor %}
+          {% endfor %}
         </div>
-      </div>
+        </div>
     </div>
-
-
+  </div>
 </div>
-</div>
+  
 
 {% comment %} javascript {% endcomment %}
 <script>
@@ -235,21 +237,9 @@ function dropdown() {
       });
     });
 
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  document.documentElement.classList.add('dark')
-} else {
-  document.documentElement.classList.remove('dark')
-}
-
-// Whenever the user explicitly chooses light mode
-localStorage.theme = 'light'
-
-// Whenever the user explicitly chooses dark mode
-localStorage.theme = 'dark'
-
-// Whenever the user explicitly chooses to respect the OS preference
-localStorage.removeItem('theme')
+    document.getElementById("darkModeToggle").addEventListener("click", function() {
+      document.body.classList.toggle("dark");
+  });
    
 
 </script>
