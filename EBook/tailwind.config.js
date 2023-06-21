@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  experimental: {
+    darkModeVariant: true,
+  },
   darkMode: 'class',
   mode: 'jit',
   purge: [],

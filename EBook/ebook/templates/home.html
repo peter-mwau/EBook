@@ -1,5 +1,4 @@
- {% block content %}
-
+{% block content %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E-BOOK</title>
-  {% comment %} <link href="https://cdn.tailwindcss.com" rel="stylesheet"> {% endcomment %}
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <style>
     body {
@@ -21,36 +21,22 @@
     }
   </style>
 </head>
-<body>
-<header id="main-header" class="mx-auto items-center justify-center text-center font-bold text-2xl text-black bg-gray-200 p-2">
-  <b>E-BOOK</b>
-</header>
-
-<!-- Rest of the code... -->
- 
- <form action="" method="post"  enctype="multipart/form-data">
-  {% csrf_token %}
-  <h1>Document Contents:</h1>
-    <div class="w-[70% border-2 items-center justify-center mx-auto]">
-      <pre>{{ document_contents }}</pre>
+<body class="bg-gray-200 flex flex-col items-center justify-center min-h-screen">
+  <form action="" method="post" enctype="multipart/form-data" class="p-5 bg-white shadow-lg rounded w-full sm:w-3/4 md:w-2/3 lg:w-3/4 xl:w-3/4">
+    {% csrf_token %}
+    <h2 class="text-3xl font-bold text-center mb-6">E-BOOK</h2>
+    <pre class="bg-gray-100 p-4 overflow-auto">{{ document_contents }}</pre>
+    <div class="mt-6">
+      <label for="file" class="block text-sm font-bold">Upload Document:</label>
+      <input type="file" name="file" id="file" class="border border-gray-300 rounded p-2 w-full" />
+      <a class="mt-2 block text-blue-500 hover:underline" href="{{ document.file.url }}">Download Document</a>
     </div>
+    <div class="mt-6">
+      <input type="submit" value="Upload" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer w-full">
+    </div>
+  </form>
 
-    {% comment %} upload file button {% endcomment %}
-    <input type="file" name="file" id="file" class="hidden" />
-    <a class="m-2 p-2 " href="{{ document.file.url }}">Download Document</a>
-    <input type="submit" value="Upload">
-</form>
-
-<script>
-  function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle('dark-mode');
-  }
-</script>
-
-
-<body>
-  <footer class="footer bg-gray-50 p-1 font-bold my-auto">
+  <footer class="footer bg-gray-50 p-1 font-bold mt-6">
     <div class="flex flex-row mx-auto m-1">
       <ul class="flex flex-row mx-auto m-1">
         <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
@@ -64,11 +50,19 @@
         </li>
       </ul>
       <div class="flex flex-row ml-auto">
-        <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+        <button class="dark-mode-toggle border-2 bg-emerald-400" onclick="toggleDarkMode()">
           <i class="fa fa-adjust"></i>
         </button>
       </div>
     </div>
   </footer>
-  {% endblock  %}
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
 </html>
+{% endblock %}
