@@ -7,3 +7,6 @@ class BookContent(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Document(models.Model):
+    file = models.FileField(upload_to='documents/')

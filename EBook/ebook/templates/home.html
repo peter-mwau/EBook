@@ -1,3 +1,5 @@
+ {% block content %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E-BOOK</title>
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  {% comment %} <link href="https://cdn.tailwindcss.com" rel="stylesheet"> {% endcomment %}
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <style>
     body {
@@ -25,6 +27,19 @@
 </header>
 
 <!-- Rest of the code... -->
+ 
+ <form action="" method="post"  enctype="multipart/form-data">
+  {% csrf_token %}
+  <h1>Document Contents:</h1>
+    <div class="w-[70% border-2 items-center justify-center mx-auto]">
+      <pre>{{ document_contents }}</pre>
+    </div>
+
+    {% comment %} upload file button {% endcomment %}
+    <input type="file" name="file" id="file" class="hidden" />
+    <a class="m-2 p-2 " href="{{ document.file.url }}">Download Document</a>
+    <input type="submit" value="Upload">
+</form>
 
 <script>
   function toggleDarkMode() {
@@ -33,25 +48,27 @@
   }
 </script>
 
-<footer class="footer bg-gray-50 p-1 font-bold my-auto">
-  <div class="flex flex-row mx-auto m-1">
-    <ul class="flex flex-row mx-auto m-1">
-      <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
-        <a href="#">Home</a>
-      </li>
-      <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
-        <a href="#">About</a>
-      </li>
-      <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
-        <a href="#">Contact</a>
-      </li>
-    </ul>
-    <div class="flex flex-row ml-auto">
-      <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-        <i class="fa fa-adjust"></i>
-      </button>
+
+<body>
+  <footer class="footer bg-gray-50 p-1 font-bold my-auto">
+    <div class="flex flex-row mx-auto m-1">
+      <ul class="flex flex-row mx-auto m-1">
+        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+          <a href="#">Home</a>
+        </li>
+        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+          <a href="#">About</a>
+        </li>
+        <li class="font-semibold text-xl hover:text-black hover:cursor-pointer p-2">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+      <div class="flex flex-row ml-auto">
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+          <i class="fa fa-adjust"></i>
+        </button>
+      </div>
     </div>
-  </div>
-</footer>
-</body>
+  </footer>
+  {% endblock  %}
 </html>
