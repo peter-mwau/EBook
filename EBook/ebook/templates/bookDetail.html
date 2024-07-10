@@ -1,0 +1,15 @@
+<!-- book_detail.html -->
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+{% load static tailwind_tags %}
+
+{% tailwind_css %}
+
+{% block content %}
+<div class="bg-gray-100 w-[60%] items-center justify-center mx-auto h-[100vh] p-2 md:w-full md:h-auto">
+{% for book in book_contents %}
+    <h2 class="text-cyan-950 text-3xl font-semibold text-center py-2">{{ book.title }}</h2>
+    {% comment %} <div class="w-[90%] items-center justify-center mx-auto mt-10 text-2xl ">{{ book.content|linebreaks }}</div> {% endcomment %}
+    <pre class="bg-gray-100 p-4 text-3xl whitespace-pre-wrap dark-mode:bg-gray-800 dark-mode:text-gray-100 md:text-xl lg:w-[80%] lg:mx-auto lg:h-auto">{{ book.content }}</pre>
+{% endfor %}
+</div>
+{% endblock %}

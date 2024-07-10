@@ -1,5 +1,7 @@
 {% block content %}
 
+{% load static %}
+
 {% include  'navbar.html' %}
 <!doctype html>
 <html lang="en">
@@ -47,17 +49,44 @@
   <form action="" method="post" enctype="multipart/form-data" class="container p-5 bg-white shadow-lg rounded w-full sm:w-3/4 md:w-2/3 lg:w-3/4 xl:w-3/4">
     {% csrf_token %}
     <h2 class="text-3xl font-bold text-center mb-6">E-BOOK</h2>
-    <pre class="bg-gray-100 p-4 whitespace-pre-wrap dark-mode:bg-gray-800 dark-mode:text-gray-100">{{ document_contents }}</pre>
+    {% for book in book_contents %}
+      {% comment %} <h3 class="text-xl font-semibold text-center text-gray-600">{{ book.title }}</h3> {% endcomment %}
+      {% comment %} <pre class="bg-gray-100 p-4 whitespace-pre-wrap dark-mode:bg-gray-800 dark-mode:text-gray-100">{{ book.content }}</pre> {% endcomment %}
+    {% endfor %}
+    {% comment %} <pre class="bg-gray-100 p-4 whitespace-pre-wrap dark-mode:bg-gray-800 dark-mode:text-gray-100">{{ document_contents }}</pre> {% endcomment %}
+    {% comment %} {% for document in document_contents %}
+      <div class="mt-2">
+        <a class="block lg:w-[30px] bg-blue-600 text-white font-semibold p-2 rounded-3xl hover:underline" href="{{ document.file_url }}">{{ document.file_name }}</a>
+      </div>
+    {% endfor %} {% endcomment %}
    <div class="mt-6">
       <label for="file" class="block text-sm font-bold">Upload Document:</label>
       <input type="file" name="file" id="file" class="border border-gray-300 rounded p-2 w-full" />
-      <a class="mt-2 block text-blue-500 hover:underline" href="{{ document.file.url }}">Download Document</a>
+      <a class="mt-2 block lg:w-[30px] bg-blue-600 text-white font-semibold p-2 rounded-3xl hover:underline" href="{{ document.file.url }}">Download Document</a>
     </div> 
    <div class="mt-6">
-      <input type="submit" value="Upload" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer w-full">
+      <input type="submit" value="Upload" class="bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded cursor-pointer w-full">
     </div>
+    
   </form>
-
+  {% comment %} {% for book in book_contents %}
+  <h3 class="text-xl font-semibold text-center text-gray-600">{{ book.title }}</h3>
+  <pre class="bg-gray-100 p-4 whitespace-pre-wrap dark-mode:bg-gray-800 dark-mode:text-gray-100">{{ book.content }}</pre>
+{% endfor %} {% endcomment %}
+<div class="lg:grid lg:grid-cols-4 lg:gap-2">
+  {% for document in documents %}
+    <div class="w-[80%] max-w-sm mx-auto bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-2">
+      <!-- Image -->
+      <img class="rounded-t-lg w-full h-48 object-cover" src="{% static  'images/aboutcover.jpg' %}" alt="Document Image">
+      <!-- Card Body -->
+      <div class="p-5">
+        {% comment %} {% if document.file_name %} {% endcomment %}
+          <a href="{% url 'bookDetail' book_id=document.pk%}" class="text-left p-2 text-gray-900 dark:text-white">{{ document.file_name }}</a>
+        {% comment %} {% endif %} {% endcomment %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
  <!-- footer.html -->
 <footer class="container bg-gray-900 text-white py-6 rounded-sm">
   <div class="mx-auto flex flex-row justify-between m-2 p-2">
